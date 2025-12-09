@@ -42,7 +42,7 @@ class NoteRepositoryImpl implements NoteRepository {
         headers: {"Content-Type": "application/json"},
       );
     } catch (e) {
-      // offline → retry later
+
     }
   }
 }

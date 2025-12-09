@@ -5,10 +5,10 @@ import '../../domain/repositories/note_repository.dart';
 class NotesController extends GetxController {
   final NoteRepository repository;
 
-  // Observable notes list
+
   RxList<Note> notes = <Note>[].obs;
 
-  // Constructor (must use named parameter)
+
   NotesController({required this.repository});
 
   @override
@@ -17,18 +17,17 @@ class NotesController extends GetxController {
     super.onInit();
   }
 
-  /// Load all notes from repository
   void loadNotes() async {
     notes.value = await repository.getNotes();
   }
 
-  /// Add a new note
+
   void addNote(Note note) async {
     await repository.addNote(note);
     notes.add(note);
   }
 
-  /// Update existing note
+
   void updateNote(Note note) async {
     await repository.updateNote(note);
     int index = notes.indexWhere((e) => e.id == note.id);
@@ -38,7 +37,7 @@ class NotesController extends GetxController {
     }
   }
 
-  /// Delete note
+
   void deleteNote(String id) async {
     await repository.deleteNote(id);
     notes.removeWhere((e) => e.id == id);

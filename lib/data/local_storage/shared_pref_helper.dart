@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../domain/entities/note.dart';
 
+
+///<<<<<<<<<<<<<<<<< SharedPrefHelper>>>>>>>>>>>>
 class SharedPrefHelper {
   static const String notesKey = "notes";
 
