@@ -39,24 +39,38 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      ///<<<<<<<<<<<<<<<<< logic app var >>>>>>>>>>>>>>>>
       appBar: AppBar(
         title: Text(widget.isEdit ? "Edit Note" : "Add Note"),
       ),
+
+
+      /// <<<<<<<<<<<<<<<  state body >>>>>>>>>>>>>>>>
       body: Padding(
         padding: const EdgeInsets.all(14.0),
         child: Column(
           children: [
+
+            ///<<<<<<<<<<<<<<< tittle field>>>>>>>>>>>>>>>>
             TextField(
               controller: titleCtrl,
               decoration: const InputDecoration(hintText: "Title"),
             ),
-            const SizedBox(height: 12),
+             SizedBox(height: 12),
+
+            ///<<<<<<<<<<<<<this is content >>>>>>>>>>>>>>>>
             TextField(
               controller: contentCtrl,
               maxLines: 6,
               decoration: const InputDecoration(hintText: "Content"),
             ),
-            const SizedBox(height: 12),
+
+
+
+             SizedBox(height: 12),
+
+            /// <<<<<<<<<<<<<< circle colors >>>>>>>>>>>>>
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -68,7 +82,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
               ],
             ),
 
-            const Spacer(),
+           SizedBox(height: 150,),
 
             ElevatedButton(
               onPressed: () {
@@ -93,7 +107,8 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                 }
                 Navigator.pop(context);
               },
-              child: const Text("Save"),
+              child: const Text("Save Button"),
+
             ),
           ],
         ),

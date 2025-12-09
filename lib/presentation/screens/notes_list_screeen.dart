@@ -13,10 +13,20 @@ class NotesListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      ///<<<<<<<<<<<this is for app bar design>>>>>>>>>>>
-      appBar: AppBar(title: const Text("Notes")),
+      ///<<<<<<<<<<<this is  app bar design>>>>>>>>>>>
+   appBar: AppBar(
+
+     title: Center(child: Text("Notes")
+
+     ),
+    // backgroundColor: Colors.greenAccent,
+   ),
+
+
+      ///<<<<<<<<<<<<<< add floatingactionbutton>>>>>>>>>>>>>
+
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        child:  Icon(Icons.add),
         onPressed: () {
           Get.to(() => NoteDetailScreen(
             controller: controller,
@@ -24,11 +34,13 @@ class NotesListScreen extends StatelessWidget {
           ));
         },
       ),
+
+
       body: Obx(
             () => ListView.builder(
           itemCount: controller.notes.length,
-          itemBuilder: (_, i) {
-            final note = controller.notes[i];
+          itemBuilder: (context, index) {
+            final note = controller.notes[index];
             return NoteCard(
               note: note,
               onTap: () {
